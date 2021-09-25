@@ -1,4 +1,4 @@
-class Solution {
+class ReverseBetween {
     public ListNode reverseBetween(ListNode head, int left, int right) {							// reverses a linkedlist between two specified nodes
 		if (head == null || left >= right) return head;
 		int length = 0;
@@ -60,7 +60,7 @@ class Solution {
 		return s == null ? "" : s;
 	}
 	public static void test0(int left, int right,String ta){										// empty ListNode test
-		Solution s = new Solution();
+		ReverseBetween s = new ReverseBetween();
 		ListNode head = s.makeList0();
 		String tb = "";
 		String rb = s.print(head);
@@ -71,7 +71,7 @@ class Solution {
 		assert(ta.equals(ra));
 	}
 	public static void test1(int left, int right,String ta){										// empty ListNode test
-		Solution s = new Solution();
+		ReverseBetween s = new ReverseBetween();
 		ListNode head = s.makeList1();
 		String tb = "1";
 		String rb = s.print(head);
@@ -82,7 +82,7 @@ class Solution {
 		assert(ta.equals(ra));
 	}
 	public static void test6(int left, int right,String ta){										// 6 element ListNode test
-		Solution s = new Solution();
+		ReverseBetween s = new ReverseBetween();
 		ListNode head = s.makeList6();
 		String tb = "1 2 3 4 5 6";
 		String rb = s.print(head);
