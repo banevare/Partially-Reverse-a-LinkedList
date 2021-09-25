@@ -1,0 +1,73 @@
+<h1> Test Reverse List </h1>
+<table>
+	<tr><td>Left<td><input id="l" value="2">
+	<tr><td>Right<td><input id="r" value="6"> 
+	<tr><td>Reverse!<td><button id="b"> Click Me! </button>
+	<tr><td>Before: <td><pre id="q"></pre>
+	<tr><td>After: <td><pre id="p"></pre>
+</table>
+<script> b.onclick = function() {
+	console.log("hello");
+	var reverseBetween = function(head,left,right) {							// reverses a linkedlist between two specified nodes
+		if (head == null || left >= right) return head;
+		var length = 0;
+		var pLeft = head;
+		for(var p = head; p != null; p = p.next){
+			length++;
+			if(length == left){
+				pLeft = p;
+				break;
+			}
+		}
+		while(left < right){
+			var position = left;
+			for(var p = pLeft.next; p != null; p = p.next){
+				position++;
+				if(position == right){
+					var temp = p.val;
+					p.val = pLeft.val;
+					pLeft.val = temp;																// stores our second node value
+					break;
+				}
+			}
+			pLeft = pLeft.next;
+			left++;
+			right--;
+		}
+		return head;
+	}
+	function ListNode(val, next) {
+    	this.val = (val===undefined ? 0 : val)
+    	this.next = (next===undefined ? null : next)
+ 	}
+	function ListNode(val,prev){
+		this.val = (val===undefined ? 0 : val)
+		if(prev != null) prev.next = this;
+	}
+
+	function makeList6(){											// ListNode = [1 2 3 4 5 6] 
+		var a = new ListNode(1);
+		var b = new ListNode(2,a);
+		var c = new ListNode(3,b);
+		var d = new ListNode(4,c);
+		var e = new ListNode(5,d);
+		var f = new ListNode(6,e);
+		return a;
+	}
+	function makeList0(){											// ListNode = [] n = 1
+		return null;
+	}
+	function print(head){											// printing method of our singly-linked list
+		var s = null;
+		var p = head;
+		while(p != null){
+			if( s == null) s = "" + p.val; else s += " " + p.val;
+			p = p.next;
+		}
+		return s == null ? "" : s;
+	}
+	var head    = makeList6();
+	q.innerHTML = print(head);
+	p.innerHTML = print(reverseBetween(head,Number(l.value),Number(r.value)));
+}
+</script>
