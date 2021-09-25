@@ -90,7 +90,6 @@ class ReverseBetween {
 
 		ListNode r = s.reverseBetween(head,left,right);
 		String ra = s.print(r);
-		System.out.println("my output: " + ra);
 		assert(ta.equals(ra));
 	}
 	public static void main(String[] args){															// main test for singly-linked list
