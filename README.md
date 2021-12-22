@@ -4,4 +4,4 @@
 
 Reverses a LinkedList between two specified nodes
 
-JavaScript Solution [click here](http://banevare.github.io/reverseBetween.html)
+JavaScript Solution [click here](http://banevare.github.io/moveZeroes.html)
